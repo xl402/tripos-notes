@@ -1,0 +1,318 @@
+<!DOCTYPE html><html><head>
+      <title>3G1_Exp1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="3g1-example-paper-1">3G1 Example Paper 1</h1>
+
+<p><em>Tom Lu xl402</em></p>
+<p><strong>1.	It has been hypothesized that the first macromolecule to evolve was RNA. What functions would it need to perform to be the sole precursor for the life we know today? What properties of RNA make it possible to perform those functions? What molecules have replaced those functions in currently living organisms?</strong></p>
+<ul>
+<li>It is hypothesized that RNA is the precursor of genetic information storage molecule</li>
+<li>In order for living systems to exist, there must be a evolution of families of molecules that could catalyze their own replication</li>
+<li>Polynucleotides can both <strong>store information</strong> and <strong>catalyze chemical reactions</strong>
+<ul>
+<li>They differ from polypeptides as they can directly guide the formation of their own replications</li>
+<li>Through complementary base pairing of nucleotide subunits using one polynucleotide to act as a template of itself</li>
+<li>Without catalysts, polymer formation is slow and error-prone. Therefore another function polynucleotides needs to perform is to be able to act as a catalyst during replication</li>
+</ul>
+</li>
+<li>A RNA molecule is a polynucleotide with a sugar phosphate backbone ensuring its stability (making it a robust information storage) and bases (AUCG) that could form complimentary base pairs through hydrogen bonding</li>
+<li>RNA molecules are capable of self replicating through RNA replication</li>
+<li>RNA molecules are the catalysts for the peptidyl transferase reaction that takes place on the ribosome</li>
+<li>This makes RNA molecules both a information carrier and a catalyst which completes the hypothesis</li>
+<li>DNA molecules have replaced RNA in currently living organisms as RNA is relatively unstable due to uracil, the unmethylated form of thymine</li>
+</ul>
+<p><strong>2.	DNA is a double stranded molecule. A copy of both strands is passed on to progeny produced asexually.</strong><br>
+<strong>a.	Describe two possible configurations for distributing the two copy strands and the two original strands over the two daughter cells.</strong><br>
+<strong>b.	How would you discover which configuration is implemented in nature? Consider the following tools. You can grow cells to contain exclusively 15N containing DNA or exclusively 14N containing DNA. Furthermore, you have the ability to measure the proportion of cells which have 14N, 15N, or a mixture.</strong></p>
+<ul>
+<li>There are three models for DNA replication: conservative, semi-conservative and dispersive
+<ul>
+<li>Conservative replication entails an exact replica of the original double stranded DNA</li>
+<li>Semi conservative model entails the two new double strands contains one template strand from the original DNA and a newly formed strand</li>
+<li>Dispersive model entails that the replication happens on a per section bases where the both strands in the new double strands contain some of the original and some of the new nucleosides</li>
+</ul>
+</li>
+<li>Meselson and Stahl confirmed in 1952 that DNA is replicated semi-conservatively through experimentation</li>
+<li>Semi conservative model makes most sense as the two complementary strands of helix might separate during replication each serving as a template for the construction of a new, matching strand</li>
+<li>Experiment begins with growing E.coli in a medium containing only <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>15</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{15}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> until all E.coli&apos;s nitrogenous bases were labeled with heavy nitrogen</li>
+<li>Bacteria are then switched to medium containing light <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{14}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> isotope and allowed to grow for several generations</li>
+<li>Using density gradient centrifugation method, after each generation the content of the bacteria samples are measured</li>
+<li>Generation1:
+<ul>
+<li>Also produced a single band when centrifuged</li>
+<li>However this band was higher, intermediate in density between the heavy <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>15</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{15}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> and the light <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{14}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span></li>
+<li>This indicates the DNA molecules made in the first round of replication was a hybrid of light and heavy DNA</li>
+<li>This confirms that the replication process is either semi-conservative or dispersive</li>
+</ul>
+</li>
+<li>Generation 2:
+<ul>
+<li>Produced two bands, one was in the same position as the intermediate band from the first generation</li>
+<li>Second was higher (appeared to be labelled only with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{14}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span></li>
+<li>This confirms the semi-conservative model since if dispersive, there would never be any pure <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{14}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> band forming</li>
+</ul>
+</li>
+<li>The relative proportions of the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{14}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> /<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>15</mn></msup><mtext>N</mtext></mrow><annotation encoding="application/x-tex">^{15}\textrm{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">N</span></span></span></span></span> DNAs is defined as a geometric progression over the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathit">i</span></span></span></span>th generation:<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mrow><mn>14</mn><mi mathvariant="normal">/</mi><mn>15</mn></mrow></msub><mo>(</mo><mi>i</mi><mo>)</mo><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo fence="true">)</mo></mrow><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mspace width="1em"></mspace><mi mathvariant="normal">&#x2200;</mi><mi>i</mi><mo>&#x2265;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D_{14/15}(i)= \left(\dfrac{1}{2}\right)^{i-1} \quad \forall i \geq 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1052em;vertical-align:-0.3551999999999999em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">4</span><span class="mord mtight">/</span><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathit">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.6145940000000003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.6645640000000002em;"><span style="top:-3.9029000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord">&#x2200;</span><span class="mord mathit">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2265;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></li>
+</ul>
+<p><strong>3.	You have been given an agar plate with a very small bacterial colony, composed of only a few cells. These bacteria have been transformed with a plasmid vector containing the gene coding for the green fluorescent protein (GFP), flanked by two restriction sites, HindIII and BamHI.</strong><br>
+<strong>a.	What are restriction enzymes, what is their original function in bacteria, and why are they useful in modern bioengineering?<br>
+[10]</strong><br>
+Also termed restriction endonuclease is an enzyme that cleaves DNA into fragments at or near specific recognition sites within the molecule known as restriction sites. They are used commonly in Bioengineering to select the part of the DNA to be cloned either through molecular cloning or PCR<br>
+<strong>b.	You are asked to carry out a DNA digestion using these two restriction enzymes (HindIII and BamHI) to isolate the gene encoding GFP, to be used in subsequent experiments. Knowing that the small colony on your agar plate will not yield enough DNA to carry out the restriction digest, how could you obtain a sufficient amount of DNA to carry out the restriction digest? [10]</strong><br>
+Can try to grow the colony by incubating the bacteria over a long time period. Or using PCR, it is possible to increase the number of DNA molecules from a few nanograms to a few micrograms, however this procedure is more error prone<br>
+<strong>c.	You are also interested to study the cellular localisation of a special type of &#x3B3;-tubulin from the fruit fly Drosophila melanogaster, and decide to make a chimeric DNA molecule by joining your target gene (&#x3B3;-tubulin) with the reporter gene (the GFP) to make a single open reading frame. First you decide to perform a polymerase chain reaction to amplify the target gene (&#x3B3;-tubulin), which is 2 kb long. Describe the reagents you should mix in your tube and what happens during each step in the thermo-cycler (the machine performing the amplification reactions). [30]</strong><br>
+The Polymerase chain reaction requires:</p>
+<ul>
+<li>Taq DNA polymerase which is stable under high temperature (95 degrees)</li>
+<li>DNA primers designed specifically for the DNA region of interest</li>
+<li>PCR buffers to provide the optimal condition for Taq polymerase</li>
+<li>Nanograms of the DNA strand that is to be replicated</li>
+</ul>
+<p>During each thermo-cycle:</p>
+<ul>
+<li>Denaturation (96 degrees), DNA strands are denatured through the separation of hydrogen bonds</li>
+<li>Annealing (55-56 degrees), primers bind to their complementary sequences on the single strand template DNA</li>
+<li>Extension (72 degrees), the reaction temperature is raised so Taq polymerase extends the primers, synthesising new strands of DNA</li>
+</ul>
+<p>Picture below denotes what happens to a single double stranded DNA during each thermocycle</p>
+<center>
+<p><img src="assets/Screenshot%202018-10-26%20at%2001.57.03.png" alt="Screenshot 2018-10-26 at 01.57.03"></p>
+</center>
+<p><strong>d.Your supervisor then informs you that he wants to use a collaborator&#x2019;s strain that already expresses GFP for the study, so you have to PCR-amplify another reporter gene, a red fluorescent protein (RFP) to tag &#x3B3;-tubulin. You then decide to use isothermal Gibson assembly to join your gene of interest (&#x3B3;-tubulin) and the new reporter gene (RFP) in this order (&#x3B3;-tubulin - RFP) to a plasmid. Describe the necessary PCR reactions, showing diagrams for each (include primers, DNA template and post-PCR fragments). [30]</strong></p>
+<p><strong>e.	You now want to carry out the isothermal Gibson assembly to join up the &#x3B3;-tubulin gene, the RFP gene and plasmid backbone. Briefly describe which reagents you have to mix, the overall protocol, what happens during the reaction, and why your primers had to be designed the way they did for the reaction to work. [20]</strong></p>
+<p><strong>4.</strong><br>
+<strong>a.	What reagents are needed to carry out a polymerase chain reaction? [20]</strong><br>
+(see above)<br>
+<strong>b.	PCR can be used to fuse different DNA fragments together. Explain why it cannot be used to directly build megabase-scale DNA constructs. [20]</strong><br>
+Because PCR happens in-vitro, there are no error correction enzymes during the replication stage. The replication procedure done by Taq polymerase is error prone and typically has an error rate of one per 5-20 kb. Therefore it is not possible to build long chain of genes.<br>
+<strong>c.	A PCR reaction is set up to amplify a human exon from a blood sample. When the products of the PCR reaction are separated by agarose gel electrophoresis two bands are seen: one is the expected size and the other is slightly smaller. Provide a possible explanation for this result. [25]</strong><br>
+See the PCR cycle illustration from above, during each stage <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span>, we are expecting from a double stranded DNA molecule <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> number of replicated target genes:<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><munderover><mo>&#x2211;</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></munderover><msup><mn>2</mn><mi>n</mi></msup><mo>&#x2212;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N = \sum_{n=1}^T 2^n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0954490000000003em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></span><br>
+However, at each stage their will be two molecules per original molecule of by product, formed due to the fact that they only contain one primer. This results in another band showing in the gel electrophoresis. The amount however should be very small since they grown linearly whereas the replicated gene grows exponentially.<br>
+<strong>d.	A PCR reaction is set up but inadvertently the researcher adds one hundredth of the correct amount of one of the primers. Describe the course of the subsequent reaction and the most likely dominant product that will be generated. [35]</strong><br>
+There will still be some of the human exon produced, although the yield will be 100 times lower. As soon as one of the primers run out, There will be incomplete replication shown in the sketch below. The amount of &quot;half replicated&quot; long chained DNA strand stays the same with the number of thermocycles as the other half cannot be replicated due to the complete lack of primer, Taq polymerase will not replicate that strand of DNA. Therefore we are expecting a very low yild of the target exon to be replicated along with some amount (slightly greater than the amount of extra primer added) of &quot;half replicated&quot; DNA strands.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
