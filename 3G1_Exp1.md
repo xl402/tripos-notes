@@ -44,6 +44,7 @@
 
 **3.	You have been given an agar plate with a very small bacterial colony, composed of only a few cells. These bacteria have been transformed with a plasmid vector containing the gene coding for the green fluorescent protein (GFP), flanked by two restriction sites, HindIII and BamHI.**
 **a.	What are restriction enzymes, what is their original function in bacteria, and why are they useful in modern bioengineering? [10]**
+**palindromic**
 Also termed restriction endonuclease is an enzyme that cleaves DNA into fragments at or near specific recognition sites within the molecule known as restriction sites. They are used commonly in Bioengineering to select the part of the DNA to be cloned either through molecular cloning or PCR
 **b.	You are asked to carry out a DNA digestion using these two restriction enzymes (HindIII and BamHI) to isolate the gene encoding GFP, to be used in subsequent experiments. Knowing that the small colony on your agar plate will not yield enough DNA to carry out the restriction digest, how could you obtain a sufficient amount of DNA to carry out the restriction digest? [10]**
 Can try to grow the colony by incubating the bacteria over a long time period. Or using PCR, it is possible to increase the number of DNA molecules from a few nanograms to a few micrograms, however this procedure is more error prone
@@ -78,13 +79,13 @@ Picture below denotes what happens to a single double stranded DNA during each t
 **a.	What reagents are needed to carry out a polymerase chain reaction? [20]**
 (see above)
 **b.	PCR can be used to fuse different DNA fragments together. Explain why it cannot be used to directly build megabase-scale DNA constructs. [20]**
-Because PCR happens in-vitro, there are no error correction enzymes during the replication stage. The replication procedure done by Taq polymerase is error prone and typically has an error rate of one per 5-20 kb. Therefore it is not possible to build long chain of genes.
+Because PCR happens in-vitro, there are no error correction enzymes during the replication stage. The replication procedure done by Taq polymerase is error prone and typically has an error rate of one per 5-20 kb. Therefore it is not possible to build long chain of genes. **Also, a taq polymerase can only extend for a set amount of length before it stops functioning**
 **c.	A PCR reaction is set up to amplify a human exon from a blood sample. When the products of the PCR reaction are separated by agarose gel electrophoresis two bands are seen: one is the expected size and the other is slightly smaller. Provide a possible explanation for this result. [25]**
 See the PCR cycle illustration from above, during each stage $T$, we are expecting from a double stranded DNA molecule $N$ number of replicated target genes:
 $$
 N = \sum_{n=1}^T 2^n-2
 $$
-However, at each stage their will be two molecules per original molecule of by product, formed due to the fact that they only contain one primer. This results in another band showing in the gel electrophoresis. The amount however should be very small since they grown linearly whereas the replicated gene grows exponentially.
+However, at each stage their will be two molecules per original molecule of by product, formed due to the fact that they only contain one primer. This results in another band showing in the gel electrophoresis. The amount however should be very small since they grown linearly whereas the replicated gene grows exponentially. **Also, the presence of alleles may also affect it.**
 **d.	A PCR reaction is set up but inadvertently the researcher adds one hundredth of the correct amount of one of the primers. Describe the course of the subsequent reaction and the most likely dominant product that will be generated. [35]**
 There will still be some of the human exon produced, although the yield will be 100 times lower. As soon as one of the primers run out, There will be incomplete replication shown in the sketch below. The amount of "half replicated" long chained DNA strand stays the same with the number of thermocycles as the other half cannot be replicated due to the complete lack of primer, Taq polymerase will not replicate that strand of DNA. Therefore we are expecting a very low yild of the target exon to be replicated along with some amount (slightly greater than the amount of extra primer added) of "half replicated" DNA strands.
 
