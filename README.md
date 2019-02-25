@@ -11,3 +11,4 @@ This repo contains notes taken from Cambridge IIA course. Links below for quick 
 * 3G1 Exp 2 http://htmlpreview.github.io/?https://github.com/xl402/Tripos_Notes/blob/master/3G1_Exp2.html
 * 3G1 Exp 3 http://htmlpreview.github.io/?https://github.com/xl402/Tripos_Notes/blob/master/3G1_exp3.html
 * 3G3 Exp 2 : http://htmlpreview.github.io/?https://github.com/xl402/Tripos_Notes/blob/master/3G3_Exp2.html
+* Films to watch with Bella http://htmlpreview.github.io/?https://github.com/xl402/Tripos_Notes/blob/master/film_list.html
