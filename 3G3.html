@@ -1,0 +1,438 @@
+<!DOCTYPE html><html><head>
+      <title>3G3</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="3g3-introduction-to-neuroscience1">3G3 Introduction to Neuroscience<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h1>
+
+<h2 class="mume-header" id="1-synaptic-transmission">1. Synaptic Transmission</h2>
+
+<ul>
+<li>Two basic forms of synaptic transmission: electrical or chemical<br>
+<img src="assets\1_odpkmolv6.PNG" alt="1"></li>
+</ul>
+<h3 class="mume-header" id="11-electrical-synapses-are-employed-primarily-to-send-rapid-and-stereotyped-depolarizing-signals">1.1 <strong>Electrical synapses</strong> are employed primarily to send rapid and stereotyped depolarizing signals.</h3>
+
+<ul>
+<li>Pre and postsynaptic cells communicate through special channels the <strong>gap-junction channels (4nm)</strong> which directly connects the cytoplasm of two cells</li>
+<li>These gap-junction channels contain specialized protein structures that conduct ionic current from the presynaptic to postsynaptic cell.<br>
+<img src="assets\2_ombld4lvr.PNG" alt="2"></li>
+<li><strong>Neurotransmitters</strong> released from nearby chemical synapses can modulate the opening of gap-junction channels through <strong>intracellular metabolic reactions</strong></li>
+<li>At electrical synapses some of the current from excitatory synaptic transmission will enter the postsynaptic cell through the gap-junction channels</li>
+<li>To generate large enough current to not only depolarize the presynaptic cell above the threshold <strong>but also generate sufficient ionic current to produce a change in potential in the postsynaptic cell</strong>, the presynaptic terminal must be big enough for its membrane to contain many ion channels.</li>
+<li>At the same time, the postsynaptic cell must be <strong>relatively small</strong>. This is because a small cell has a <strong>higher input resistance</strong>, hence it undergoes a <strong>greater voltage change</strong> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">&#x394;</mi><mi>V</mi><mo>=</mo><mi>I</mi><msub><mi>R</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta V = IR_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">&#x394;</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>)</li>
+<li>The time between the presynaptic spike and the postsynaptic potential is <strong>virtually instantaneous</strong>, such a short latency is not possible with chemical transmission, which requires several biochemical steps.</li>
+<li><strong>The change in potential of the postsynaptic cell is directly related to the size and shape of the change in potential of the presynaptic cell</strong>. Even a weak subthreshold depolarizing current injected into the presynaptic neuron, some current enters the postsynaptic neuron and depolarizes it. (By contrast, at chemical synapse this does not happen, presynaptic current must reach threshold)</li>
+<li><strong>Electrical transmission allows the rapid and synchronous firing of interconnected cells</strong>
+<ul>
+<li>Speed is important or escape responses</li>
+<li>Useful for orchestrating the actions of large group of neurons, several small cells can act coordinately as one large cell</li>
+<li>Because of <strong>electrical coupling</strong> between cells, the <strong>effective resistance</strong> of the coupled network of neurons is <strong>smaller</strong> than the resistance of an individual cell. Thus <strong>the synaptic current required to fire electrically coupled cells is larger than that necessary to fire an individual cell</strong>. Hence <strong>electrically coupled cells have a higher firing threshold</strong>, once this threshold is reached, they fire synchronously.</li>
+</ul>
+</li>
+<li><strong>Electrical synapses can also transmit metabolic signals between cells</strong>
+<ul>
+<li><strong>Because gap-junction channels are relatively large and nonselective</strong>, they conduct a variety of inorganic cations and anions.</li>
+<li>Including the second messenger Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> and cAMP to pass from one cell to the next.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="12-chemical-synapses-are-capable-of-more-variable-signaling-and-thus-can-produce-more-complex-behaviors">1.2 <strong>Chemical synapses</strong> are capable of more variable signaling and thus can produce more complex behaviors.</h3>
+
+<ul>
+<li>Can mediate either excitatory or inhibitory actions in postsynaptic cells</li>
+<li>Can produce electrical changes in the postsynaptic cell that last from milliseconds to many minutes</li>
+<li>Serve to amplify neuronal signals</li>
+<li><strong>No direct low-resistance pathway</strong> between pre- and postsynaptic cells.</li>
+<li>Action potential in presynaptic neuron initiates the release of a <strong>chemical transmitter</strong> which diffuses across the <strong>synaptic cleft</strong> to interact with receptors on the <strong>membrane</strong> of the postsynaptic cells.
+<ul>
+<li>A <strong>neurotransmitter</strong> is a chemical substance that binds receptors in the postsynaptic membrane of the target cell</li>
+</ul>
+</li>
+<li><strong>Exocytosis</strong>:
+<ul>
+<li>During a presynaptic action potential, voltage-gated Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> channels at the activation zone open</li>
+<li>Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> ions enter the presynaptic terminal, the rise in intracellular concentration triggers a biochemical reaction</li>
+<li>This reaction causes the vesicles to fuse with the presynaptic membrane and release neurotransmitter into the synaptic cleft</li>
+</ul>
+</li>
+<li>The transmitter molecules then diffuse across the synaptic cleft and bind to their receptors on the postsynaptic cell membrane
+<ul>
+<li>Which in turn activates the receptors</li>
+<li>Leading to the opening or closing of ion channels</li>
+<li>Resulting flux of ions alters the membrane conductance and potential of postsynaptic cell.<br>
+<img src="assets\4_ahl9pq70g.PNG" alt="4"></li>
+</ul>
+</li>
+<li>These steps cause a delay that can be from 0.3ms to several milliseconds. Although chemical transmission lacks the speed of electrical synapses, it has the property of <strong>amplification</strong>
+<ul>
+<li>Just one synaptic vesicle releases several thousand molecules of transmitter</li>
+<li>These transmitters can together open thousands of ion channels in the target cell</li>
+<li>Small presynaptic nerve terminal, which generates only a weak electrical current can depolarize a large postsynaptic cell.</li>
+</ul>
+</li>
+<li>All receptors for chemical transmitters have two biochemical features in common:
+<ul>
+<li>They are <strong>membrane spanning proteins</strong>, the region exposed to the external environment of the cell recongnizes and binds the transmitter from the presynaptic cell.</li>
+<li>They carry out an effector function within the target cell, the receptors <strong>typically influence the opening or closing of ion channels</strong></li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="13-different-types-of-postsynaptic-receptors">1.3 Different Types of Postsynaptic Receptors</h3>
+
+<p>Neurotransmitters control the opening of ion channels in the postsynaptic cell either directly or indirectly.</p>
+<ul>
+<li><strong>Ionotropic and metabotropic receptors</strong>
+<ul>
+<li>Receptors that gate ion channels directly such as the <strong>ACh (Acetylcholine) receptor</strong> at the neuromuscular junction</li>
+<li>Composed of four or five subunits that form a single macromolecule</li>
+<li>Contain both an extracellular domain that forms the binding site for the transmitter and a membrane-spanning domain that forms an ion conducting pore</li>
+<li>Upon binding neurotransmitter, the receptor <strong>undergoes a conformational change that opens the channel</strong></li>
+<li>Produce relatively fast synaptic actions lasting only milliseconds, commonly found at synapses in neural circuits that mediate rapid behaviors</li>
+<li><strong>Ionotropic glutamate receptors</strong> have been divided into four subtypes on the basis of their ligand binding properties and sequence similarity: <strong>AMPA, kainate, NMDA and delta</strong> receptors (AMPA, NMDA discussed later.)</li>
+</ul>
+</li>
+<li><strong>AMPA and NMDA receptors</strong>
+<ul>
+<li>to be completed</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Metabotropic receptors</strong>
+<ul>
+<li>Receptors that gate ion channels indirectly, like the several types of receptors for <strong>dopamine</strong> and <strong>norepinephrine</strong> in neurons of the cerebral cortex</li>
+<li>Normally composed of one or at most two subunits that are distinct from the ion channels they regulate</li>
+<li><strong>Activation of these receptors often stimulates the production of second messengers</strong> such as cAMP and diacyglycerol</li>
+<li>Many of the second messengers active <strong>protein kinases</strong>, enzymes that phosphorylate different substrate proteins</li>
+<li>In many cases the protein kinases directly phosphorylate ion channels, leading to their opening and closing</li>
+<li>Produce slower synaptic actions lasting seconds to minutes, can modulate behavior by altering the excitability of neurons and the strength of the synaptic connections</li>
+<li>Often act as crucial reinforcing pathways in the process of learning.</li>
+<li>In the picture below, we see that the receptors are composed of a single subunit which activate a <strong>guanosine triphosphate (GTP)-binding protein (G protein)</strong> which in turn stimulates <strong>adenylyl cyclase</strong> which converts ATP to cAMP, the cAMP activates the cAMP dependent protein kinase (PKA) which phosphorylates the channel, leading to a change in function.<br>
+<img src="assets\5_keou6b44w.PNG" alt="5"></li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="13-cellular-mechanisms-of-implicit-memory-storage">1.3 Cellular Mechanisms of Implicit Memory Storage</h3>
+
+<p>There are two major forms of memory, <strong>implicit</strong> and <strong>explicit</strong> memory:</p>
+<ul>
+<li>Implicit memory (Left picture):
+<ul>
+<li>Operates unconsciously and automatically</li>
+<li>For habits and perceptual and motor skills</li>
+<li>Long term storage requires a family of structures:
+<ul>
+<li><strong>neocortex</strong> for priming</li>
+<li><strong>Striatum</strong> for skills and habits</li>
+<li><strong>Amygdala</strong> for learned fear</li>
+<li><strong>Cerebellum</strong> for learned motor skills</li>
+<li>Certain reflex pathways for non-associative learning such as habituation and sensitization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Explicit memory (Right picture):
+<ul>
+<li>Operates consciously</li>
+<li>Memory for people, places and objects</li>
+<li>Long term storage of explicit memory begins in the <strong>hippocampus</strong> and the <strong>medial temporal lobe</strong> of the <strong>neocortex</strong><br>
+<img src="assets\6_s2r7ljuu4.PNG" alt="6"></li>
+</ul>
+</li>
+</ul>
+<p><strong>Implicit Memory Storage Involves Changes In the Effectiveness of Synaptic Transmission</strong>, in this section, we discuss <strong>habituation, sensitization and classical conditioning</strong> mechanisms. Using <em>Aplysia</em> which has a repertory of defensive reflexes for withdrawing its respiratory gill and siphon, a small fleshy spout above the gill used to expel seawater.</p>
+<ul>
+<li>
+<p><strong>Habituation results from an Activity-Dependent Presynaptic Depression of Synaptic Transmission</strong></p>
+<ul>
+<li>Touching the siphon excites a population of mechanoreceptor sensory neurons that innervate the siphon</li>
+<li>The release of <strong>glutamate</strong> from sensory neuron terminals generates fast <strong>excitatory postsynaptic potentials</strong> (EPSPs) in the interneurons and motor cells<br>
+<img src="assets\11_73svbx843.PNG" alt="11"></li>
+<li>EPSPs from sensory and interneurons summate on motor cells both temporally and spatially</li>
+<li>The motor cells discharge strongly, thereby producing withdrawal of the gill</li>
+<li>If stimulus is repeated. <strong>EPSPs produced by sensory neurons in both interneurons and motor cells progressively decrease</strong> paralleling the habituation of gill withdrawal.</li>
+<li>In addition, repeated stimulation also leads to a decrease in the strength of synaptic transmission from the excitatory interneurons to the motor neurons.</li>
+<li>This is due to <strong>the amount of glutamate released from presynaptic terminals of sensory neurons decreases</strong></li>
+<li><strong>Fewer synaptic vesicles are released with each action potential in the sensory neuron.</strong></li>
+<li>This reduction is referred as <strong>homosynaptic depression</strong>. As the sensitivity of the postsynaptic glutamate receptors does not change because the reduction in transmission occurs in the <strong>active pathway</strong> itself and does not require another modulatory cell.</li>
+<li>In <em>Aplysia</em> a single session of 10 stimuli leads to a short-term habituation lasting few minutes, four sessions separated by resting periods produce long-term habituation lasting around 3 weeks.</li>
+<li>Long term habituation is caused by <strong>a decrease in the number of synaptic contacts between sensory and motor neurons</strong><br>
+<img src="assets\7_zi8g27d94.PNG" alt="7"></li>
+</ul>
+</li>
+<li>
+<p><strong>Sensitization Involves Presynaptic Facilitation of Synaptic Transmission</strong><br>
+<img src="assets\8_dny4l6d66.PNG" alt="8"></p>
+<ul>
+<li>With a harmful stimulus the animal typically learns fear, it responds vigorously not only to the harmful stimulus but also to other concurrent stimuli.</li>
+<li>Tail shock of the <em>Aplysia</em> is sufficient to overcome the effects of habituation and enhance a habituated gill-withdraw reflex in a process termed <strong>dishabituation</strong></li>
+<li>In <em>Aplysia</em>, sensitization is achieved via a <strong>heterosynaptic process</strong> thad depends on modulatory interneurons activated by the harmful stimulus to the tail<br>
+<img src="assets\10_2y37israj.PNG" alt="10"></li>
+<li>The <strong>serotonergic interneurons</strong> use <strong>serotonin</strong> as a transmitter, form synapses on many regions of the sensory neurons, including <strong>axo-axonic synapses</strong>(synapses that intervene between axons) on the presynaptic terminals on the sensory cells.</li>
+<li>The serotonin released from the interneurons after a single tail shock binds to a 5-HT receptor in the sensory neurons that is coupled to a <strong>stimulatory G protein</strong> that increases the <strong>activity of adenylyl cyclase</strong></li>
+<li>This action produces the <strong>second messenger cAMP</strong> which in turn activates the <strong>cAMP-dependent kinase (PKA)</strong></li>
+<li>Serotinin also activates a second type of G protein-coupled receptor that leads to the <strong>hydrolysis of phospholipids and the activation of protein kinase C (PKC)</strong></li>
+<li>The protein phosphorylation mediated by PKA and PKC <strong>enhances</strong> the release of transmitter from transmitter from sensory neurons in two mechanisms:
+<ul>
+<li><strong>PKA phosphorylates a K<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> channel</strong>, causing it to close, which broadens the action potential and thus enhances Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> influx through voltage-gated Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> channels which in turn enhances transmitter release</li>
+<li><strong>PKC enhances the functioning of the release machinery directly</strong><br>
+<img src="assets\91.PNG" alt="91"></li>
+</ul>
+</li>
+<li><strong>Classical Conditioning</strong><br>
+Classical conditioning of fear involves coordinated pre and postsynaptic facilitation of synaptic transmission
+<ul>
+<li>An initial weak conditioned stimulus becomes highly effective in producing a response when paired with a strong unconditioned stimulus</li>
+<li>In <em>Aplysia</em>, a weak touch to the siphon serves as the conditioned stimulus while a strong shock to the tail serves as the unconditioned stimulus</li>
+<li><strong>Activity dependent facilitation</strong> is the process where the serotonin from the interneurons produces even greater presynaptic facilitation when the tail shock immediately follows a slight tap on the siphon.</li>
+<li>The siphon is touched immediately prior to shocking the tail, as a result, the siphon sensory neurons <strong>are primed to be more responsive to input from the faciliatory interneurons</strong> in the unconditioned pathway</li>
+<li>The action potential triggers an <strong>influx of Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span></strong> into the sensory neuron&apos;s presynaptic terminals</li>
+<li>The Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> binds to <strong>calmodulin</strong> and the complex in turn binds to <strong>adenylyl cyclase</strong>.</li>
+<li>This <strong>primes the adenylyl cyclase</strong> so that it responds more vigorously to the <strong>serotonin released following the US at the tail</strong></li>
+<li>As a result, the production of cAMP is enhanced, which increases the amount of presynaptic facilitation.<br>
+<img src="assets\12.PNG" alt="12"></li>
+<li><strong>Siphon touched --&gt; Lots Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> in presynaptic site --&gt; These Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> binds with calmodulin forming a complex --&gt; The complex binds to adenylyl cyclase (priming) --&gt; Responds more vigorously to the serotonin released following UC --&gt; Increases order of presynaptic facilitation</strong></li>
+<li>Classical conditioning in this sense is largely an elaboration of sensitization mechanism, with the added feature that the adenylyl cyclase serves as a <strong>coincidence detector</strong></li>
+<li>From the perspective of motor neuron (postsynaptic synapse), <strong>classic conditioning causes a larger influx of Na<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> ions</strong> into the postsynaptic synapse</li>
+<li>Therefore increased AMPA activity activates NMDA receptors allowing more Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> ions into the synapse causing several intracellular intercellular cascades</li>
+<li>Ca<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><annotation encoding="application/x-tex">^{2+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> binds with calmodulin forming complex which activates CAMKinase (CaMKII).</li>
+<li>CamKinase phosphorylate AMPA receptors increasing their conductance to sodium ions</li>
+<li>CamKinase also promotes AMPA receptors from intracellular stores into the membrane making new AMPA receptors</li>
+<li>Calcium ions may also facilitate the release of transmitter from the presynaptic terminal via <strong>retrograde signal generator</strong> such as NO and CO</li>
+<li>As a result, the response to a stimulus of a given strength will be stronger than before the NMDA is activated. Ths synapse is then seen as <strong>enhanced</strong>.</li>
+<li>Now without the tail UC stimulus, a CS will still cause an enhanced response on the motor gill.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Created by: Tom Xiaoding  Lu on 24/02/19 <a href="#fnref1" class="footnote-backref">&#x21A9;&#xFE0E;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
