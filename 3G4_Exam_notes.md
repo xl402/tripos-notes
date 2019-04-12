@@ -1,0 +1,81 @@
+# 3G4 Medical Imaging and Computer Graphics[^1]
+[^1]:Created by: Tom Xiaoding  Lu on 09/04/19
+* **Distance transform**
+  - A distance transform is an image where each pixel is replaced by a number representing the shortest distance to the border of a contour. It can be used for interpolating between contour lines in 3D slices.
+    - Go through the thresholded data and label each pixel which is next to the contour of the object in a 4-connected case, as +5 if inside the contour and -5 if outside the contour. All other pixels should be labelled with large positive values (outside the contour) and large negative values (inside contour)
+    - Use a forward mask to process the data left to right and top to bottom, if the current pixel is positive, then it is replaced with the SMALLEST of each of the mask values ADDED to the underlying pixel values. If the current pixel is negative, then replace with the GREATEST of each mask values SUBTRACTED from the underlying pixel values.
+    - Having processed all the data, use the backward mask to process the data right to left and bottom to top in the same manner as above.
+    - Finally the border values can be set from their neibouring pixels
+  - City block distances are those only measured in horizontal and vertical directions, Chamfer distances add diagonal directions to these. Euclidean distances are how we would normally measure distance, i.e. in the straitest direct path from A to B
+  - Possible usages: shape based interpolation, registration (measure the MSE of the a target shape's distance transform relative to a bunch of other shape's distance transform, the lowest of the bunch means it matches most closely to the target shape) and shape description (A shape can be described concisely by its skeletonisation, derived from the peak values of the distance transform of the shape)
+  ![23](/assets/23.PNG)
+* **z-buffer**
+  - An area of the memory with the same dimensions as the frame buffer. When we write a pixel into the frame buffer, we also write its $z_s$ value into the z buffer, if a subsequent polygon attempts to shade the same pixel as an earlier one, we compare the new $z_s$ with the value currently in the z-buffer, and write over the existing pixel in the frame buffer and the z buffer only if the new point is nearer to the viewer. Initially, all z buffer values are set to 1
+- **NMR Imaging**
+  - **Meaning of larmor frequency and gyromagnetic ratio**
+    - When the net nuclear spin of a region of protons is disturbed from alignment with an external magnetic field, it will precess around the field direction at Lamor frequency. The Lamor frequency is given by the product of the field strength and the gyromatnetic ratio of the material. For a hydrogen nuclei, the gyromagnetic ratio is 42.58MHz/T
+  - **T1 relaxation:**
+    - Called the spin-lattice relaxation. Protons revert from the excited anti-parallel state to the parallel state. Until a thermal equilibrium is restored. Energy is dissipated into the atomic and molecular environment - the lattice. The effect is recovery of the net magnetisation vector in the direction of the external field. The time constant of the T1 process is material dependent.
+    - Is the longitudinal or spin lattice relaxation time. It governs the recovery of the net magnetisation vector in the z direction. Spins change from the higher energy, pointing against the applied magnetic field, to the lower energy i.e. aligned. **Energy is dissipated from the spin system into the atomic and molecular movement** -- the lattice. Generally, material with a higher proportion of free water has a longer T1
+  - **T2 relaxation**
+    - The transverse of spin-spin relaxation. It governs the decay of the net transverse (x-y) magnetisation to zero. **Individual spinning protons generate tiny magnetic fields that affect the spin speeds of their neighbors.** This causes the net x-y magnetisation vector to de-phase and reduce. Water bound to the surface of large molecules have a shorter T2 than free water.
+  - **PD**
+    - Is the density of detectable protons in the material. This affects the magnitude of the magnetic resonance signal
+  - **T2* relaxation**
+    - The output signal dephases rapidly in the lateral (x-y) direction because of a) small scale effects from the **gradient coils**, b) imperfections in the **main magnet** and c) the magnetic susceptibility of the **patient**.
+  - **Spin Echo sequence**
+    - It is a way of overcoming the effect of T2* relaxation which causes rapid decay of the x-y component of net spin because of local inhomogeneities in the magnetic field. The spin echo sequence involves two RF pulses. The first pulse is designed to cause a 90 degrees rotation to move the spins from the alignment with the main z field into the x-y plane. The spins therefore begins to precess, but the signal decays rapidly due to T*2.
+    - The second RF pulse is then applied which flips the spins through 180 and places the fastest moving spins at the back of the pack and the slowest ones at the front. The T*2 inhomogeneities then cause the spins to come back into phase in the x-y plane and the output signal returns for a short time, before they dephase again.
+  - **T1 weighted image**
+    - MRI data is acquired by repeaging the spin-echo sequence many times. We create a T1-weighted image by reducing the repetition time, TR between individual spin-echo sequences to the point where it is too short for the longitudinal (z)  component of the spin to recover completely between sequences. Hence material with a short T1 will have recovered most and will be most able to respond correctly to the next spin-echo sequence. For a T1 weighted image we have short TR, short time to echo. As a result, tissue with a short T1 like fat, will respond strongly and come out bright in the image.
+  - **T2 weighted image**
+    - A long repetition time is used, plus a relatively long time to echo. The long repetition time enables all the spins to return to close to their equilibrium position before the next spin-echo sequence begins. The relatively long TE enables the measurement of T2. Water and CSF appear brighter than fat.
+- **Interpolation methods pros and cons**
+  - **Nearest neighbor**
+    - Very fast, easy to implement
+    - Does not even exhibit C0 continuity, not smooth at all
+    - Makes no assumption about the underlying data so in a sense is most faithful to sampled data
+    - Very blocky
+  - **Tri-linear interpolation**
+    - Pretty smooth, generates C0 continuity
+    - Very fast and easy to implement
+    - Smoothness however degrades as the data is less well sampled.
+    - Cannot be used to calculate gradients in the data. Particularly poor at interpolation diagonal features in datasets
+  - **B-spline approximation**
+    - Slower than tri linear and nearest neighbor, but relatively easy to implement
+    - Generates data which is C2 continuous and exhibits convex hull property
+    - Can be used to produce good gradient estimates in all directions
+    - It is an approximation rather than interpolation, less faithful to the original data and will return different calues than the origional data even at sampled locations
+    - Assumes underlying data is smooth itself
+  - **Radial basis function interpolation**
+    - Capable of generating an interpolant with a variety of continuities from completely unstructured samples
+    - Far harder to implement, particularly on large datasets
+    - Need to invert a matrix with the same dimension as the number of datapoints!
+    - Not possible (on most computers) in real time
+- **Sources of error during laser scanning**
+  - **Surface properties**
+    - Relies on a single, clear, reflection of the laser off the surface. Surface which are highly specular or translucent or have fine features will give multiple or distorted laser reflections
+    - Some times possible to make the surface more diffuse and simpler, like wearing tight fitting clothes or dosing the surface in whice powder
+  - **Camera pixel accuracy**
+    - Depth resolution is determined by the pixel size in the camera image. More pixels give better resolution
+    - Resolution also reduces with distance from the camera and laser, so we can scan the surface more closely
+  - **Object movement**
+    - Generally takes several minutes to scan most objects and the object must remain stationary during that time.
+    - The faster the scan, the lower this error is likely to be
+  - **Obscured features**
+    - Laser light must reach the surface in order to it to be canned. Complex surfaces therefore often contain regions which cannot be scanned
+    - Can chop up the object into several parts
+  - **Laser thickness**
+    - Laser strop has a finite thickness, when triangulating, we look for the center of the laser reflection in the camera image. If scanning sharp corners, only part of the laser strip may be reflected, and the apparent center will not be correct, resulting in depth errors
+    - A narrower laser beam will improve this
+- **Back culling VS hidden surface removal**
+  - Both is to suppress parts of the scene that are not visible from the viewpoint. However, they operate at different stages of the pipeline and on different graphics primitives.
+  - Backface culling eliminates whole polygons that are facing away from the viewpoint. These will be occluded only if they are part of a solid, opaque polyhedron. Hence backface culling should be enabled only for such non opaque polyhedral
+  - Backface culling happens in early stage (view coordinates transformation) of the pipeline. The computational savings can be significant
+  - Hidden surface removal typically used z buffer algorithm, happens in the rendering onto 2D screen part of the pipeline (last stage). As it eliminates occluded pixels.
+- **Gouraud shading VS Phong shading**
+  - Both work with vertex normals, which are found by averaging the normals of all polygons incident at a vertex
+  - Gouraud shading proceeds by calculating a color at each vertex using the vertex normal and the phone model, colors for interior pixels are found by bilinear interpolation.
+  - Phone shading interpolates the normals instead of the intensities. This tends to restore the original curvature of a surface, so that the highlights can be produced accurately.
+  - Disadvantage of phong shading is it is expensive. Even though the normals can be interpolated using incremental calculations, the vector needs to be renormalized at each pixel, then a separate intensity for each pixel is calculated using the phone model/
+  - Gauraud shading is fast, though it produces less photo-realistic renderings, particularly poor with specular component. If a highlight should impinge on a polygon but not extend to its vertices, Gouraud shading will miss the highlight.
